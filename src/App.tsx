@@ -15,7 +15,11 @@ export const App: React.FC = () => {
       <button
         type="button"
         data-cy="all-button"
-        onClick={() => getAll().then(setGoods)}
+        onClick={() =>
+          getAll()
+            .then(setGoods) // eslint-disable-next-line @typescript-eslint/no-shadow, no-console
+            .catch(error => console.error(error))
+        }
       >
         Load all goods
       </button>
@@ -23,7 +27,12 @@ export const App: React.FC = () => {
       <button
         type="button"
         data-cy="first-five-button"
-        onClick={() => get5First().then(setGoods)}
+        onClick={() =>
+          get5First()
+            .then(setGoods)
+            // eslint-disable-next-line @typescript-eslint/no-shadow, no-console
+            .catch(error => console.error(error))
+        }
       >
         Load 5 first goods
       </button>
@@ -31,7 +40,12 @@ export const App: React.FC = () => {
       <button
         type="button"
         data-cy="red-button"
-        onClick={() => getRedGoods().then(setGoods)}
+        onClick={() =>
+          getRedGoods()
+            .then(setGoods)
+            // eslint-disable-next-line @typescript-eslint/no-shadow, no-console
+            .catch(error => console.error(error))
+        }
       >
         Load red goods
       </button>
